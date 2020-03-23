@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Below are notes for what I have learnt from the tutorial video.
 
-Things you may want to cover:
+### Setting up and initial Rspec Test
+- Init project:
 
-* Ruby version
+    `$ rails new todos-testing-rails -T` // -T without unit test gen. 
+    
+- Install rspec (after declaring Gemfile and bundle install):
 
-* System dependencies
+    `$ rails g rspec:install`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Update rails_helper as we are not going to use ActiveRecord in this project.
