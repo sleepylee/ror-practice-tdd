@@ -1,8 +1,12 @@
 <h1>Hello world</h1>
 
-<%= link_to 'Add a new todo', new_todos_path %>
 <ul class="todo">
   <% @todos.each do |todo| %>
-    <li><%= todo.title %></li>
+    <li class="<%= 'completed' if todo.completed? %>">
+      <%= todo.title %>
+      <%= button_to 'Mark as complete', todo_completion_path(todo), {:class => "mark-complete"} %>
+    </li>
   <% end %>
 </ul>
+
+<%= link_to 'Add a new todo', new_todo_path %>

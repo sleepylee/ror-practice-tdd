@@ -44,3 +44,15 @@ Then includes to `rails_helper.rb` such dependency to `database_cleaner.rb`.
 
 - Writing tests to sign_in with a different :email, scope the Todos#index to show only todos of the current user/email.
 
+### Adding 'Complete a Todo' feature with TDD
+
+- Create user.rb, this is missing from the tutorial.
+
+- Create new migration to add :completed_at as :timestamp:
+
+    `$ rails g migration AddCompletedAtToTodos`
+    Update the field in the migration file, then run db:migrate
+    
+- From here, we add the logic to define whether a Todo is completed by `touch` the :completed_at field.
+
+- Moving logic from controller to the todo.rb and user.rb
