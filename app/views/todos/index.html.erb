@@ -4,7 +4,11 @@
   <% @todos.each do |todo| %>
     <li class="<%= 'completed' if todo.completed? %>">
       <%= todo.title %>
-      <%= button_to 'Mark as complete', todo_completion_path(todo), {:class => "mark-complete"} %>
+      <% if todo.completed? %>
+        <%= button_to 'Mark as incomplete', todo_completion_path(todo), {:class => "mark incomplete "} %>
+      <% else %>
+        <%= button_to 'Mark as complete', todo_completion_path(todo), {:class => "mark complete"} %>
+      <% end %>
     </li>
   <% end %>
 </ul>

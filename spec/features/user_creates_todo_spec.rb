@@ -5,11 +5,9 @@ require 'rails_helper'
 feature 'User creates todo' do
   scenario 'successfully' do
     sign_in
+    todo_title = 'Testing'
+    create_todo todo_title
 
-    click_on 'Add a new todo'
-    fill_in 'Title', with: 'hello'
-    click_on 'Submit'
-
-    page.has_css? '.todo li', text: 'hello'
+    page.has_css? '.todo li.incomplete', text: todo_title
   end
 end

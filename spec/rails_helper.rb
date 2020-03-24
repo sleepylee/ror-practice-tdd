@@ -2,6 +2,7 @@
 
 require 'spec_helper'
 require 'support/features/sign_in'
+require 'support/features/todo_helper'
 require 'support/database_cleaner'
 
 ENV['RAILS_ENV'] ||= 'test'
