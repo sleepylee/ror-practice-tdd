@@ -46,7 +46,7 @@ Then includes to `rails_helper.rb` such dependency to `database_cleaner.rb`.
 
 ### Adding 'Complete a Todo' feature with TDD
 
-- Create user.rb, this is missing from the tutorial.
+- Refactor controllers with user.rb.
 
 - Create new migration to add :completed_at as :timestamp:
 
