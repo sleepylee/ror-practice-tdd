@@ -7,7 +7,7 @@ feature 'User completes an uncompleted todo' do
     create_todo title
     click_on 'Mark as complete'
 
-    page.has_css? '.todo li.completed', text: title
+    expect(page).to have_css '.todo li.completed', text: title
   end
 
 end

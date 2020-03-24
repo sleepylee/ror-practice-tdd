@@ -8,14 +8,16 @@ feature 'User sees their own todos' do
 
     sign_in_as 'test1@example.com'
 
-    expect(page).not_to have_css '.todos li', text: 'Buy eggs'
+    expect(page).not_to have_css '.todo li', text: 'Buy eggs'
   end
 
-  scenario 'doesn\'t see the others todos' do
+  scenario 'see the their todos' do
     Todo.create(title: 'Buy 2 eggs', email: 'test@example.com')
 
     sign_in_as 'test@example.com'
 
-    page.has_css? '.todos li', text: 'Buy 2 eggs'
+    click_on 'Mark as complete'
+
+    expect(page).to have_css '.todo li.completed', text: 'Buy 2 eggs'
   end
 end
