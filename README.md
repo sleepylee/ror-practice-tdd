@@ -21,6 +21,26 @@ Below are notes for what I have learnt from the tutorial video.
 
 - Configure routes for creating a new todo, generate a new model: Todo with title
 
-    `$ rails g model Todo title && rails db:migrate` 
+    `$ rails g model Todo title && rails db:migrate`
     
-- 
+- Start writing some assertion with capybara to use the selector to validate on View
+
+    See more: this [cheat sheet](https://devhints.io/capybara)
+    
+- Adding a new :email field to todos table:
+
+    `$ rails g migration AddEmailToTodos`
+    
+    Configure on the migration file to a new column :email to table todos, then run migrate:
+    
+    `$ rails db:migrate`
+    
+- Add `gem database_cleaner` to our Gemfile, at :test flavor and install
+
+    `$ bundle install`
+    
+- Write a support class `database_cleaner` to execute some actions before every suites run.
+Then includes to `rails_helper.rb` such dependency to `database_cleaner.rb`.
+
+- Writing tests to sign_in with a different :email, scope the Todos#index to show only todos of the current user/email.
+
